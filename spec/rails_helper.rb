@@ -1,12 +1,16 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require "spec_helper"
 require "simplecov"
+require "shoulda/matchers"
 
 SimpleCov.start do
   add_filter("/spec/")
 end
 ENV["RAILS_ENV"] ||= "test"
-require File.expand_path("../spec/dummy/config/environment", __dir__)
+require_relative "../spec/dummy/config/environment"
+# ActiveRecord::Migrator.migrations_paths = [File.expand_path("../spec/dummy/db/migrate", __dir__)]
+# ActiveRecord::Migrator.migrations_paths << File.expand_path("../db/migrate", __dir__)
+# require File.expand_path("../spec/dummy/config/environment", __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "rspec/rails"

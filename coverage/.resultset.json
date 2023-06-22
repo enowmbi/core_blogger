@@ -1,0 +1,145 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/lib/core_blogger.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/lib/core_blogger/engine.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/config/routes.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/helpers/core_blogger/articles_helper.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/models/core_blogger/article.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/models/core_blogger/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/controllers/core_blogger/articles_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/controllers/core_blogger/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/helpers/core_blogger/application_helper.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1687442330
+  }
+}

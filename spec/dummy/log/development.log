@@ -1,0 +1,836 @@
+Started GET "/" for ::1 at 2023-06-20 13:15:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 480)
+Completed 200 OK in 19ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5859)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1721091371569202325)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCoreBloggerArticles (20230620121619)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.5ms)[0m  [1m[35mCREATE TABLE "core_blogger_articles" ("id" bigserial primary key, "title" character varying, "content" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230620121619"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1721091371569202325)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/core_blogger" for ::1 at 2023-06-20 13:18:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/core_blogger"):
+  
+Started GET "/core_blogger" for ::1 at 2023-06-20 13:19:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 6.5ms | Allocations: 2106)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 128.7ms | Allocations: 36832)
+Completed 200 OK in 146ms (Views: 132.8ms | ActiveRecord: 0.5ms | Allocations: 43084)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 13:19:37 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 7.9ms | Allocations: 2537)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 8.9ms | Allocations: 2855)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 10.8ms | Allocations: 3976)
+Completed 200 OK in 23ms (Views: 11.3ms | ActiveRecord: 3.6ms | Allocations: 8185)
+
+
+Started POST "/core_blogger/articles" for ::1 at 2023-06-20 13:20:03 +0100
+Processing by CoreBlogger::ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Jesus is Lord", "content"=>"Jesus is Lord to the Glory of God the Father"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoreBlogger::Article Create (1.2ms)[0m  [1m[32mINSERT INTO "core_blogger_articles" ("title", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Jesus is Lord"], ["content", "Jesus is Lord to the Glory of God the Father"], ["created_at", "2023-06-20 12:20:03.847674"], ["updated_at", "2023-06-20 12:20:03.847674"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/core_blogger/articles/1
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms | Allocations: 3952)
+
+
+Started GET "/core_blogger/articles/1" for ::1 at 2023-06-20 13:20:03 +0100
+Processing by CoreBlogger::ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoreBlogger::Article Load (0.2ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles" WHERE "core_blogger_articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/show.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/show.html.erb within layouts/core_blogger/application (Duration: 3.3ms | Allocations: 1413)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 4.9ms | Allocations: 2526)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 4505)
+
+
+Started GET "/core_blogger/articles" for ::1 at 2023-06-20 13:20:08 +0100
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.2ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 2.6ms | Allocations: 1533)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 4.3ms | Allocations: 2667)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2981)
+
+
+Started GET "/core_blogger/articles/1" for ::1 at 2023-06-20 13:20:31 +0100
+Processing by CoreBlogger::ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoreBlogger::Article Load (0.2ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles" WHERE "core_blogger_articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/show.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/show.html.erb within layouts/core_blogger/application (Duration: 1.1ms | Allocations: 783)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 2.8ms | Allocations: 1895)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 2993)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 13:20:52 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 1.6ms | Allocations: 1121)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 1.9ms | Allocations: 1222)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 3.6ms | Allocations: 2343)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2659)
+
+
+Started GET "/core_blogger" for ::1 at 2023-06-20 14:02:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (5.1ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 32.6ms | Allocations: 5777)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 59.2ms | Allocations: 11633)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 59.4ms | Allocations: 11708)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 20.0ms | Allocations: 19073)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "action_text_rich_texts" does not exist
+LINE 9:  WHERE a.attrelid = '"action_text_rich_texts"'::regclass
+                            ^
+):
+     6: 
+     7:   <p>
+     8:     <strong>Content:</strong>
+     9:     <%= article.content %>
+    10:   </p>
+    11: 
+    12: </div>
+  
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql/database_statements.rb:19:in `exec'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql/database_statements.rb:19:in `block (2 levels) in query'
+activesupport (7.0.5) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (7.0.5) lib/active_support/dependencies/interlock.rb:41:in `permit_concurrent_loads'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql/database_statements.rb:18:in `block in query'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract_adapter.rb:769:in `block in log'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract_adapter.rb:760:in `log'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql/database_statements.rb:17:in `query'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql_adapter.rb:916:in `column_definitions'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/schema_statements.rb:117:in `columns'
+activerecord (7.0.5) lib/active_record/connection_adapters/schema_cache.rb:117:in `block in columns'
+activerecord (7.0.5) lib/active_record/connection_adapters/schema_cache.rb:116:in `fetch'
+activerecord (7.0.5) lib/active_record/connection_adapters/schema_cache.rb:116:in `columns'
+activerecord (7.0.5) lib/active_record/connection_adapters/schema_cache.rb:125:in `block in columns_hash'
+activerecord (7.0.5) lib/active_record/connection_adapters/schema_cache.rb:124:in `fetch'
+activerecord (7.0.5) lib/active_record/connection_adapters/schema_cache.rb:124:in `columns_hash'
+activerecord (7.0.5) lib/active_record/model_schema.rb:580:in `load_schema!'
+activerecord (7.0.5) lib/active_record/attributes.rb:264:in `load_schema!'
+activerecord (7.0.5) lib/active_record/encryption/encryptable_record.rb:122:in `load_schema!'
+activerecord (7.0.5) lib/active_record/model_schema.rb:566:in `block in load_schema'
+activerecord (7.0.5) lib/active_record/model_schema.rb:563:in `synchronize'
+activerecord (7.0.5) lib/active_record/model_schema.rb:563:in `load_schema'
+activerecord (7.0.5) lib/active_record/model_schema.rb:429:in `attribute_types'
+activerecord (7.0.5) lib/active_record/model_schema.rb:455:in `type_for_attribute'
+activerecord (7.0.5) lib/active_record/type_caster/map.rb:16:in `type_for_attribute'
+activerecord (7.0.5) lib/arel/table.rb:107:in `type_for_attribute'
+activerecord (7.0.5) lib/active_record/table_metadata.rb:18:in `type'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:59:in `build'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:54:in `[]'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:127:in `block in expand_from_hash'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:80:in `each'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:80:in `flat_map'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:80:in `expand_from_hash'
+activerecord (7.0.5) lib/active_record/relation/predicate_builder.rb:25:in `build_from_hash'
+activerecord (7.0.5) lib/active_record/relation/query_methods.rb:1315:in `build_where_clause'
+activerecord (7.0.5) lib/active_record/relation/query_methods.rb:756:in `where!'
+activerecord (7.0.5) lib/active_record/associations/association_scope.rb:156:in `apply_scope'
+activerecord (7.0.5) lib/active_record/associations/association_scope.rb:64:in `last_chain_scope'
+activerecord (7.0.5) lib/active_record/associations/association_scope.rb:118:in `add_constraints'
+activerecord (7.0.5) lib/active_record/associations/association_scope.rb:29:in `scope'
+activerecord (7.0.5) lib/active_record/associations/association_scope.rb:7:in `scope'
+activerecord (7.0.5) lib/active_record/associations/association.rb:259:in `association_scope'
+activerecord (7.0.5) lib/active_record/associations/association.rb:106:in `scope'
+activerecord (7.0.5) lib/active_record/associations/association.rb:223:in `find_target'
+activerecord (7.0.5) lib/active_record/associations/singular_association.rb:44:in `find_target'
+activerecord (7.0.5) lib/active_record/associations/association.rb:173:in `load_target'
+activerecord (7.0.5) lib/active_record/associations/association.rb:67:in `reload'
+activerecord (7.0.5) lib/active_record/associations/singular_association.rb:11:in `reader'
+activerecord (7.0.5) lib/active_record/associations/builder/association.rb:104:in `rich_text_content'
+actiontext (7.0.5) lib/action_text/attribute.rb:36:in `content'
+/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb:9
+actionview (7.0.5) lib/action_view/base.rb:244:in `public_send'
+actionview (7.0.5) lib/action_view/base.rb:244:in `_run'
+actionview (7.0.5) lib/action_view/template.rb:157:in `block in render'
+activesupport (7.0.5) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.0.5) lib/action_view/template.rb:361:in `instrument_render_template'
+actionview (7.0.5) lib/action_view/template.rb:155:in `render'
+actionview (7.0.5) lib/action_view/renderer/partial_renderer.rb:251:in `block in render_partial_template'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.5) lib/action_view/renderer/partial_renderer.rb:246:in `render_partial_template'
+actionview (7.0.5) lib/action_view/renderer/object_renderer.rb:31:in `render_partial_template'
+actionview (7.0.5) lib/action_view/renderer/partial_renderer.rb:237:in `render'
+actionview (7.0.5) lib/action_view/renderer/object_renderer.rb:16:in `render_object_with_partial'
+actionview (7.0.5) lib/action_view/renderer/object_renderer.rb:21:in `render_object_derive_partial'
+actionview (7.0.5) lib/action_view/renderer/renderer.rb:94:in `render_partial_to_object'
+actionview (7.0.5) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (7.0.5) lib/action_view/helpers/rendering_helper.rb:44:in `render'
+/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb:7
+activerecord (7.0.5) lib/active_record/relation/delegation.rb:88:in `each'
+activerecord (7.0.5) lib/active_record/relation/delegation.rb:88:in `each'
+/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb:6
+actionview (7.0.5) lib/action_view/base.rb:244:in `public_send'
+actionview (7.0.5) lib/action_view/base.rb:244:in `_run'
+actionview (7.0.5) lib/action_view/template.rb:157:in `block in render'
+activesupport (7.0.5) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.0.5) lib/action_view/template.rb:361:in `instrument_render_template'
+actionview (7.0.5) lib/action_view/template.rb:155:in `render'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.0.5) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (7.0.5) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (7.0.5) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (7.0.5) lib/action_view/base.rb:270:in `in_rendering_context'
+actionview (7.0.5) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (7.0.5) lib/action_controller/metal/streaming.rb:216:in `_render_template'
+actionview (7.0.5) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (7.0.5) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.0.5) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.0.5) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.0.5) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:22:in `block (2 levels) in render'
+/Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/3.0.0/benchmark.rb:308:in `realtime'
+activesupport (7.0.5) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:22:in `block in render'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:91:in `cleanup_view_runtime'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:21:in `render'
+actionpack (7.0.5) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (7.0.5) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.5) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.5) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.5) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.5) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.5) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+railties (7.0.5) lib/rails/railtie.rb:226:in `public_send'
+railties (7.0.5) lib/rails/railtie.rb:226:in `method_missing'
+actionpack (7.0.5) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (7.0.5) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.5) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+puma (6.3.0) lib/puma/configuration.rb:270:in `call'
+puma (6.3.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.3.0) lib/puma/thread_pool.rb:344:in `with_force_shutdown'
+puma (6.3.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.3.0) lib/puma/server.rb:443:in `process_client'
+puma (6.3.0) lib/puma/server.rb:245:in `block in run'
+puma (6.3.0) lib/puma/thread_pool.rb:151:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1721091371569202325)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActionTextTables (20230620131256)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230620131256"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1721091371569202325)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/core_blogger" for ::1 at 2023-06-20 14:19:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (3.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 37.0ms | Allocations: 10790)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 55.1ms | Allocations: 16913)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 80.6ms | Allocations: 28672)
+Completed 200 OK in 108ms (Views: 76.9ms | ActiveRecord: 9.4ms | Allocations: 36080)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 14:19:47 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 10.0ms | Allocations: 3290)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 11.4ms | Allocations: 3595)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 13.2ms | Allocations: 4716)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 5122)
+
+
+Started GET "/core_blogger" for ::1 at 2023-06-20 14:24:07 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.4ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 31.2ms | Allocations: 10791)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 49.2ms | Allocations: 16910)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 69.9ms | Allocations: 28620)
+Completed 200 OK in 94ms (Views: 68.5ms | ActiveRecord: 6.2ms | Allocations: 36028)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 14:24:09 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 9.6ms | Allocations: 3294)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 11.1ms | Allocations: 3599)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 13.0ms | Allocations: 4720)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 5126)
+
+
+Started GET "/" for ::1 at 2023-06-20 14:37:00 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.9ms | Allocations: 480)
+Completed 200 OK in 16ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 5858)
+
+
+Started GET "/core_blogger" for ::1 at 2023-06-20 14:37:05 +0100
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 35.9ms | Allocations: 10781)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 54.9ms | Allocations: 16679)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 109.9ms | Allocations: 39973)
+Completed 200 OK in 118ms (Views: 104.4ms | ActiveRecord: 7.0ms | Allocations: 42734)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 14:37:11 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 8.1ms | Allocations: 3293)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 8.8ms | Allocations: 3598)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 11.1ms | Allocations: 5362)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 5766)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 14:37:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 32.5ms | Allocations: 12016)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 34.0ms | Allocations: 12575)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 55.8ms | Allocations: 26040)
+Completed 200 OK in 83ms (Views: 57.7ms | ActiveRecord: 5.2ms | Allocations: 36851)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 14:37:59 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 2.6ms | Allocations: 1640)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 3.0ms | Allocations: 1741)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 5.3ms | Allocations: 3505)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3824)
+
+
+Started GET "/core_blogger/articles" for ::1 at 2023-06-20 14:38:02 +0100
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.4ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 6.4ms | Allocations: 2382)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 11.6ms | Allocations: 4547)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 14.2ms | Allocations: 6324)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 1.1ms | Allocations: 6754)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 14:38:03 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 2.4ms | Allocations: 1620)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 2.6ms | Allocations: 1721)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 4.9ms | Allocations: 3485)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3801)
+
+
+Started GET "/" for ::1 at 2023-06-20 15:44:58 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.6ms | Allocations: 480)
+Completed 200 OK in 21ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 5858)
+
+
+Started GET "/core_blogger" for ::1 at 2023-06-20 15:45:08 +0100
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 34.3ms | Allocations: 10779)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 53.1ms | Allocations: 16678)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 189.9ms | Allocations: 61174)
+Completed 200 OK in 200ms (Views: 185.4ms | ActiveRecord: 6.7ms | Allocations: 63935)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 15:45:10 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 9.5ms | Allocations: 3297)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 10.8ms | Allocations: 3602)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 13.4ms | Allocations: 5488)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 5892)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 15:47:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 33.5ms | Allocations: 12012)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 35.2ms | Allocations: 12571)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 97.5ms | Allocations: 37786)
+Completed 200 OK in 127ms (Views: 100.6ms | ActiveRecord: 5.3ms | Allocations: 48596)
+
+
+Started GET "/core_blogger/articles" for ::1 at 2023-06-20 15:47:24 +0100
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.3ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 5.4ms | Allocations: 2383)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 10.0ms | Allocations: 4540)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 13.6ms | Allocations: 6497)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.8ms | Allocations: 6929)
+
+
+Started GET "/core_blogger/articles/1" for ::1 at 2023-06-20 15:47:25 +0100
+Processing by CoreBlogger::ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoreBlogger::Article Load (0.2ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles" WHERE "core_blogger_articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/show.html.erb within layouts/core_blogger/application
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 2.5ms | Allocations: 1550)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/show.html.erb within layouts/core_blogger/application (Duration: 4.4ms | Allocations: 2497)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 7.5ms | Allocations: 4433)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 5810)
+
+
+Started GET "/core_blogger/articles/1/edit" for ::1 at 2023-06-20 15:47:29 +0100
+Processing by CoreBlogger::ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoreBlogger::Article Load (0.2ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles" WHERE "core_blogger_articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/edit.html.erb within layouts/core_blogger/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 4.7ms | Allocations: 2981)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/edit.html.erb within layouts/core_blogger/application (Duration: 5.9ms | Allocations: 3271)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 8.6ms | Allocations: 5207)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 6399)
+
+
+Started GET "/core_blogger/articls" for ::1 at 2023-06-20 15:51:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlsController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Articl Load (4.0ms)[0m  [1m[34mSELECT "core_blogger_articls".* FROM "core_blogger_articls"[0m
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/index.html.erb within layouts/core_blogger/application (Duration: 11.9ms | Allocations: 2850)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 12.2ms | Allocations: 2927)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.0ms | Allocations: 10292)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "core_blogger_articls" does not exist
+LINE 1: SELECT "core_blogger_articls".* FROM "core_blogger_articls"
+                                             ^
+):
+    3: <h1>Articls</h1>
+    4: 
+    5: <div id="articls">
+    6:   <% @articls.each do |articl| %>
+    7:     <%= render articl %>
+    8:     <p>
+    9:       <%= link_to "Show this articl", articl %>
+  
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `block (2 levels) in exec_no_cache'
+activesupport (7.0.5) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (7.0.5) lib/active_support/dependencies/interlock.rb:41:in `permit_concurrent_loads'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql_adapter.rb:767:in `block in exec_no_cache'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract_adapter.rb:769:in `block in log'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract_adapter.rb:760:in `log'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql_adapter.rb:766:in `exec_no_cache'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql_adapter.rb:745:in `execute_and_clear'
+activerecord (7.0.5) lib/active_record/connection_adapters/postgresql/database_statements.rb:54:in `exec_query'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/database_statements.rb:560:in `select'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `select_all'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/query_cache.rb:107:in `block in select_all'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/query_cache.rb:137:in `block in cache_sql'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.5) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/query_cache.rb:128:in `cache_sql'
+activerecord (7.0.5) lib/active_record/connection_adapters/abstract/query_cache.rb:107:in `select_all'
+activerecord (7.0.5) lib/active_record/querying.rb:54:in `_query_by_sql'
+activerecord (7.0.5) lib/active_record/relation.rb:942:in `block in exec_main_query'
+activerecord (7.0.5) lib/active_record/relation.rb:962:in `skip_query_cache_if_necessary'
+activerecord (7.0.5) lib/active_record/relation.rb:928:in `exec_main_query'
+activerecord (7.0.5) lib/active_record/relation.rb:914:in `block in exec_queries'
+activerecord (7.0.5) lib/active_record/relation.rb:962:in `skip_query_cache_if_necessary'
+activerecord (7.0.5) lib/active_record/relation.rb:908:in `exec_queries'
+activerecord (7.0.5) lib/active_record/relation.rb:695:in `load'
+activerecord (7.0.5) lib/active_record/relation.rb:250:in `records'
+activerecord (7.0.5) lib/active_record/relation/delegation.rb:88:in `each'
+/Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/index.html.erb:6
+actionview (7.0.5) lib/action_view/base.rb:244:in `public_send'
+actionview (7.0.5) lib/action_view/base.rb:244:in `_run'
+actionview (7.0.5) lib/action_view/template.rb:157:in `block in render'
+activesupport (7.0.5) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.0.5) lib/action_view/template.rb:361:in `instrument_render_template'
+actionview (7.0.5) lib/action_view/template.rb:155:in `render'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.0.5) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.0.5) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (7.0.5) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (7.0.5) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (7.0.5) lib/action_view/base.rb:270:in `in_rendering_context'
+actionview (7.0.5) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (7.0.5) lib/action_controller/metal/streaming.rb:216:in `_render_template'
+actionview (7.0.5) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (7.0.5) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.0.5) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.0.5) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.0.5) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:22:in `block (2 levels) in render'
+/Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/3.0.0/benchmark.rb:308:in `realtime'
+activesupport (7.0.5) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:22:in `block in render'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:91:in `cleanup_view_runtime'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:21:in `render'
+actionpack (7.0.5) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (7.0.5) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.5) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.5) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.5) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.5) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.5) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+railties (7.0.5) lib/rails/railtie.rb:226:in `public_send'
+railties (7.0.5) lib/rails/railtie.rb:226:in `method_missing'
+actionpack (7.0.5) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (7.0.5) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.5) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+puma (6.3.0) lib/puma/configuration.rb:270:in `call'
+puma (6.3.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.3.0) lib/puma/thread_pool.rb:344:in `with_force_shutdown'
+puma (6.3.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.3.0) lib/puma/server.rb:443:in `process_client'
+puma (6.3.0) lib/puma/server.rb:245:in `block in run'
+puma (6.3.0) lib/puma/thread_pool.rb:151:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1721091371569202325)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCoreBloggerArticls (20230620144950)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "core_blogger_articls" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230620144950"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1721091371569202325)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/core_blogger/articls" for ::1 at 2023-06-20 15:51:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlsController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Articl Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articls".* FROM "core_blogger_articls"[0m
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/index.html.erb within layouts/core_blogger/application (Duration: 6.4ms | Allocations: 2221)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 41.6ms | Allocations: 17370)
+Completed 200 OK in 61ms (Views: 45.8ms | ActiveRecord: 0.5ms | Allocations: 24781)
+
+
+Started GET "/core_blogger/articls/new" for ::1 at 2023-06-20 15:51:55 +0100
+Processing by CoreBlogger::ArticlsController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/_form.html.erb (Duration: 31.7ms | Allocations: 11721)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articls/new.html.erb within layouts/core_blogger/application (Duration: 32.9ms | Allocations: 12039)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 35.7ms | Allocations: 13984)
+Completed 200 OK in 49ms (Views: 34.3ms | ActiveRecord: 7.7ms | Allocations: 17277)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/core_blogger/articles" for ::1 at 2023-06-20 15:52:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 27.7ms | Allocations: 10790)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 45.0ms | Allocations: 16918)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 71.0ms | Allocations: 31288)
+Completed 200 OK in 90ms (Views: 69.3ms | ActiveRecord: 6.3ms | Allocations: 38696)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 15:52:43 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 8.4ms | Allocations: 3304)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 9.4ms | Allocations: 3609)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 12.6ms | Allocations: 5553)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 5959)
+
+
+Started GET "/core_blogger/articles" for ::1 at 2023-06-20 16:22:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.4ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 33.2ms | Allocations: 10791)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 51.2ms | Allocations: 16913)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 84.7ms | Allocations: 31103)
+Completed 200 OK in 109ms (Views: 84.3ms | ActiveRecord: 6.2ms | Allocations: 38511)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 16:22:26 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 10.4ms | Allocations: 3314)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 11.6ms | Allocations: 3619)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 14.5ms | Allocations: 5563)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 5969)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 16:22:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 34.5ms | Allocations: 12010)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 36.0ms | Allocations: 12569)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 60.8ms | Allocations: 26841)
+Completed 200 OK in 92ms (Views: 62.4ms | ActiveRecord: 7.0ms | Allocations: 37655)
+
+
+Started GET "/" for ::1 at 2023-06-20 16:28:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/enowmbi/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.3ms | Allocations: 480)
+Completed 200 OK in 20ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 5858)
+
+
+Started GET "/simple_blogger" for ::1 at 2023-06-20 16:28:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/simple_blogger"):
+  
+Started GET "/core_blogger" for ::1 at 2023-06-20 16:28:19 +0100
+Processing by CoreBlogger::ArticlesController#index as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application
+  [1m[36mCoreBlogger::Article Load (0.5ms)[0m  [1m[34mSELECT "core_blogger_articles".* FROM "core_blogger_articles"[0m
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "CoreBlogger::Article"], ["name", "content"], ["LIMIT", 1]]
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_article.html.erb (Duration: 39.2ms | Allocations: 10778)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/index.html.erb within layouts/core_blogger/application (Duration: 55.4ms | Allocations: 16501)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 90.5ms | Allocations: 30905)
+Completed 200 OK in 100ms (Views: 84.9ms | ActiveRecord: 7.6ms | Allocations: 33614)
+
+
+Started GET "/core_blogger/articles/new" for ::1 at 2023-06-20 16:28:20 +0100
+Processing by CoreBlogger::ArticlesController#new as HTML
+  Rendering layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb
+  Rendering /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/_form.html.erb (Duration: 9.1ms | Allocations: 3136)
+  Rendered /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/core_blogger/articles/new.html.erb within layouts/core_blogger/application (Duration: 10.3ms | Allocations: 3435)
+  Rendered layout /Users/enowmbi/projects/ruby_and_rails/engines/core_blogger/app/views/layouts/core_blogger/application.html.erb (Duration: 13.2ms | Allocations: 5379)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 5782)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (18.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

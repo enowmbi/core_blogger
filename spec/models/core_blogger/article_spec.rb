@@ -5,6 +5,7 @@ module CoreBlogger
     describe "database columns and indexes" do
       it { is_expected.to have_db_column(:title).of_type(:string) }
       it { is_expected.to have_db_column(:content).of_type(:text) }
+      it { is_expected.to have_db_index(:title) }
     end
 
     describe "validations" do

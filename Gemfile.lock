@@ -76,7 +76,11 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
+    brakeman (6.0.0)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -193,6 +197,8 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
+    ruby_audit (2.2.0)
+      bundler-audit (~> 0.9.0)
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
     simplecov (0.22.0)
@@ -223,6 +229,8 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  brakeman
+  bundler-audit
   core_blogger!
   factory_bot_rails
   pg (~> 1.1)
@@ -230,6 +238,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubocop-rails
+  ruby_audit
   shoulda-matchers
   simplecov
   sprockets-rails

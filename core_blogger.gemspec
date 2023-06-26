@@ -23,6 +23,8 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 7.0"
+  spec.add_dependency "hotwire-rails"
+  spec.add_dependency "importmap-rails"
   spec.add_development_dependency "annotate"
   spec.add_development_dependency "brakeman"
   spec.add_development_dependency "bundler-audit"
